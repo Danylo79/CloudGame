@@ -5,6 +5,12 @@
             "name": "john",
             "email": "dan.komisarenko@gmail.com",
             "password": "1234567890"
+        },
+        {
+            "id": "1",
+            "name": "Jeff",
+            "email": "dkomi1@ocdsb.ca",
+            "password": "Wow"
         }
     ]
 }
