@@ -1,0 +1,10 @@
+{
+    "accounts": [
+        {
+            "id": "0",
+            "name": "john",
+            "email": "dan.komisarenko@gmail.com",
+            "password": "1234567890"
+        }
+    ]
+}
