@@ -20,6 +20,9 @@ app.use(cookieSession({
 app.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/login.html'));
 });
+app.get('/forum', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/mainforum.html'));
+});
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/game/main.html'));
