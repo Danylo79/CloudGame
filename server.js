@@ -1,12 +1,21 @@
 const express = require('express')
+const cookieSession = require('cookie-session')
 const path = require('path')
 const bodyParser = require('body-parser');
 const port = 3000
 const fs = require('fs');
 const app = express()
-app.use(bodyParser.urlencoded({ extended: true }));
 
+app.set('trust proxy', 1)
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', express.static('pages'))
+app.use(cookieSession({
+    name: 'session',
+    secret: '1f232b3eqybfcmd123rythgfbdnvs',
+    maxAge: 24 * 60 * 60 * 1000,
+    httpOnly: false
+}));
 
 app.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/login.html'));
@@ -14,6 +23,17 @@ app.get('/login', function (req, res) {
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/game/main.html'));
+});
+
+app.get('/login/result', function (req, res) {
+    console.log("Userid:", req.session.userid);
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ userid: req.session.userid }, null, 3));
+});
+
+app.get('/logout', function (req, res) {
+    req.session.userid = null;
+    res.redirect('/');
 });
 
 app.post('/login', function (req, res) {
@@ -25,10 +45,10 @@ app.post('/login', function (req, res) {
         for (let i = 0; i < accounts.length; i++) {
             if (req.body.email == accounts[i].email) {
                 if (req.body.password == accounts[i].password) {
-                    console.log("Signed In!");
+                    console.log("Signed In!:", accounts[i].name);
+                    req.session.userid = accounts[i].id;
                     res.redirect('/')
                     currentaccount = accounts[i];
-                    console.log(currentaccount);
                 } else {
                     res.status(403);
                     res.send("Wrong password");

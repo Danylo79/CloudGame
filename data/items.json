@@ -1,0 +1,10 @@
+{
+    "items": [
+        {
+            "item":"Rock",
+            "itemid":10000,
+            "itemtype":"Misc",
+            "itemrarity":"common"
+        }
+    ]
+}

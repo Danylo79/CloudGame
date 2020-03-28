@@ -1,13 +1,13 @@
 {
     "accounts": [
         {
-            "id": "0",
-            "name": "john",
+            "id": 1000,
+            "name": "John",
             "email": "dan.komisarenko@gmail.com",
             "password": "1234567890"
         },
         {
-            "id": "1",
+            "id": 1023,
             "name": "Jeff",
             "email": "dkomi1@ocdsb.ca",
             "password": "Wow"
