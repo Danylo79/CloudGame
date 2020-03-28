@@ -1,0 +1,18 @@
+{
+    "rarityscale": [
+        {
+            "rarityscaletype":"normal",
+            "1":"Common",
+            "2":"Uncommon",
+            "3":"Rare",
+            "4":"Epic",
+            "5":"Legendary"
+        },
+        {
+            "rarityscaletype":"event",
+            "1":"Special",
+            "2":"Contraband",
+            "3":"Very Special"
+        }
+    ]
+}
