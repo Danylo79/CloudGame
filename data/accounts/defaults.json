@@ -1,0 +1,8 @@
+{
+    "mana": 50,
+    "health": 100,
+    "strength": 10,
+    "critchance": 0,
+    "critdamage": 0,
+    "defence": 25
+}

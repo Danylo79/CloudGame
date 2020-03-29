@@ -1,0 +1,14 @@
+{
+    "normal": [
+        "Common",
+        "Uncommon",
+        "Rare",
+        "Epic",
+        "Legendary"
+    ],
+    "event": [
+        "Special",
+        "Contraband",
+        "Very Special"
+    ]
+}

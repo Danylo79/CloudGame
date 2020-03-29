@@ -28,19 +28,25 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/game/main.html'));
 });
 
+app.get('/nav', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/nav.html'));
+});
+
 app.get('/login/result', function (req, res) {
-    console.log("Userid:", req.session.userid);
+    console.log("user:", req.session.user);
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ userid: req.session.userid }, null, 3));
+    const user = req.session.user;
+    const payload = { id: user.id, name: user.name, email: user.email };
+    res.end(JSON.stringify(payload, null, 3));
 });
 
 app.get('/logout', function (req, res) {
-    req.session.userid = null;
+    req.session.user = null;
     res.redirect('/');
 });
 
 app.post('/login', function (req, res) {
-    fs.readFile(path.join(__dirname + '/data/accounts.json'), (err, data) => {
+    fs.readFile(path.join(__dirname + '/data/accounts/accounts.json'), (err, data) => {
         if (err) throw err;
         const accounts = JSON.parse(data).accounts;
         let currentaccount = null;
@@ -49,7 +55,7 @@ app.post('/login', function (req, res) {
             if (req.body.email == accounts[i].email) {
                 if (req.body.password == accounts[i].password) {
                     console.log("Signed In!:", accounts[i].name);
-                    req.session.userid = accounts[i].id;
+                    req.session.user = accounts[i];
                     res.redirect('/')
                     currentaccount = accounts[i];
                 } else {

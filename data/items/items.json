@@ -1,0 +1,176 @@
+{
+    "items": [
+        {
+            "item": "Rock",
+            "itemid": 10000,
+            "itemtype": "Misc",
+            "itemrarity": "Common",
+            "itemrarityscale": "normal",
+            "mana": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "strength": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "critchance": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "critdamage": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "health": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "defence": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ]
+        },
+        {
+            "item": "Bone Talisman",
+            "itemid": 1791,
+            "itemtype": "Talisman",
+            "itemrarity": "Uncommon",
+            "itemrarityscale": "normal",
+            "mana": [
+                {
+                    "modifier": "-",
+                    "amount": 1
+                }
+            ],
+            "strength": [
+                {
+                    "modifier": "+",
+                    "amount": 25
+                }
+            ],
+            "critchance": [
+                {
+                    "modifier": "+",
+                    "amount": 1
+                }
+            ],
+            "critdamage": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "health": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "defence": [
+                {
+                    "modifier": "+",
+                    "amount": 40
+                }
+            ]
+        },
+        {
+            "item": "Strength Talisman",
+            "itemid": 1851,
+            "itemtype": "Talisman",
+            "itemrarity": "Uncommon",
+            "itemrarityscale": "normal",
+            "mana": [
+                {
+                    "modifier": "-",
+                    "amount": 1
+                }
+            ],
+            "strength": [
+                {
+                    "modifier": "+",
+                    "amount": 125
+                }
+            ],
+            "critchance": [
+                {
+                    "modifier": "-",
+                    "amount": 5
+                }
+            ],
+            "critdamage": [
+                {
+                    "modifier": "-",
+                    "amount": 1
+                }
+            ],
+            "health": [
+                {
+                    "modifier": "+",
+                    "amount": 50
+                }
+            ],
+            "defence": [
+                {
+                    "modifier": "-",
+                    "amount": 5
+                }
+            ]
+        },
+        {
+            "item": "Mana Talisman",
+            "itemid": 1628,
+            "itemtype": "Talisman",
+            "itemrarity": "Uncommon",
+            "itemrarityscale": "normal",
+            "mana": [
+                {
+                    "modifier": "+",
+                    "amount": 100
+                }
+            ],
+            "strength": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "critchance": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "critdamage": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "health": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "defence": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ]
+        }
+    ]
+}

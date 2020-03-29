@@ -1,0 +1,14 @@
+{
+    "itemtypes": [
+        "Misc",
+        "Talisman",
+        "Potion",
+        "Weapon",
+        "Tool",
+        "Armor_Helmet",
+        "Armor_Chestplate",
+        "Armor_Leggings",
+        "Armor_Boots",
+        "Armor_Gloves"
+    ]
+}
