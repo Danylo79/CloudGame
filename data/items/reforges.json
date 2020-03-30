@@ -1,0 +1,127 @@
+{
+    "reforges": [
+        {
+            "name": "Itchy",
+            "id": 284,
+            "chance": 25,
+            "statboost-mana": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "statboost-strength": [
+                {
+                    "moddifier": "+",
+                    "amount": 0
+                }
+            ],
+            "statboost-defence": [
+                {
+                    "moddifier": "+",
+                    "amount": 0
+                }
+            ],
+            "statboost-critchance": [
+                {
+                    "moddifier": "+",
+                    "amount": 50
+                }
+            ],
+            "statboost-critdamage": [
+                {
+                    "moddifier": "+",
+                    "amount": 100
+                }
+            ],
+            "statboost-health": [
+                {
+                    "moddifier": "+",
+                    "amount": 0
+                }
+            ]
+        },
+        {
+            "name": "Zealous",
+            "id": 361,
+            "chance": 20,
+            "statboost-mana": [
+                {
+                    "modifier": "+",
+                    "amount": 0
+                }
+            ],
+            "statboost-strength": [
+                {
+                    "moddifier": "+",
+                    "amount": 30
+                }
+            ],
+            "statboost-defence": [
+                {
+                    "moddifier": "+",
+                    "amount": 50
+                }
+            ],
+            "statboost-critchance": [
+                {
+                    "moddifier": "+",
+                    "amount": 0
+                }
+            ],
+            "statboost-critdamage": [
+                {
+                    "moddifier": "+",
+                    "amount": 0
+                }
+            ],
+            "statboost-health": [
+                {
+                    "moddifier": "+",
+                    "amount": 0
+                }
+            ]
+        },
+        {
+            "name": "Clumsy",
+            "id": 514,
+            "chance": 20,
+            "statboost-mana": [
+                {
+                    "modifier": "+",
+                    "amount": 500
+                }
+            ],
+            "statboost-strength": [
+                {
+                    "moddifier": "-",
+                    "amount": 5
+                }
+            ],
+            "statboost-defence": [
+                {
+                    "moddifier": "-",
+                    "amount": 5
+                }
+            ],
+            "statboost-critchance": [
+                {
+                    "moddifier": "-",
+                    "amount": 5
+                }
+            ],
+            "statboost-critdamage": [
+                {
+                    "moddifier": "-",
+                    "amount": 5
+                }
+            ],
+            "statboost-health": [
+                {
+                    "moddifier": "-",
+                    "amount": 5
+                }
+            ]
+        }
+    ]
+}
