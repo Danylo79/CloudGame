@@ -20,8 +20,23 @@ app.use(cookieSession({
 app.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/login.html'));
 });
+app.get('/extras', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/extras/extras.html'));
+});
 app.get('/forum', function (req, res) {
-    res.sendFile(path.join(__dirname + '/pages/mainforum.html'));
+    res.sendFile(path.join(__dirname + '/pages/extras/mainforum.html'));
+});
+app.get('/wiki', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/extras/mainwiki.html'));
+});
+app.get('/wiki/items', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/extras/wikiitems.html'));
+});
+app.get('/wiki/gamemechanics', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/extras/wikigamemechanics.html'));
+});
+app.get('/wiki/authors', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/extras/wikiauthors.html'));
 });
 
 app.get('/', function (req, res) {
@@ -61,6 +76,7 @@ app.post('/login', function (req, res) {
                 } else {
                     res.status(403);
                     res.send("Wrong password");
+                    return;
                 }
                 break;
             }
