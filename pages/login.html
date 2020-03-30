@@ -9,29 +9,33 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="signin.css" rel="stylesheet">
-    <title>Hello, world!</title>
+    <!-- <link href="signin.css" rel="stylesheet"> -->
+    <title>Login</title>
 </head>
 
 <body class="text-center">
-    <form class="form-signin" action="/login" method="post">
-        <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-        
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+    <div id="nav"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-4 mx-auto">
+                <form class="form-signin" action="/login" method="post">
+                    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                        required="" autofocus="">
+
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input name="password" type="password" id="inputPassword" class="form-control mb-3"
+                        placeholder="Password" required="">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
+                </form>
+            </div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
-    </form>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -44,6 +48,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="/game/main.js"></script>
 </body>
 
 </html>

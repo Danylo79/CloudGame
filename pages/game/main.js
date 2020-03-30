@@ -20,9 +20,12 @@ fetch('/nav').then(function (response) {
 		var btn = document.getElementById("loginbtn");
 		var isundefined = typeof (data.id) == "undefined" || data.id == null;
 		btn.innerHTML = isundefined ? "Login" : "Logout";
+		btn.classList.add(isundefined ? "btn-success" : "btn-danger");
 		btn.setAttribute("href", isundefined ? "/login" : "/logout");
+		var playbtn = document.getElementById("playbtn");
+		playbtn.classList.add(isundefined ? "disabled" : "active");
 		var label = document.getElementById("AccountName");
-		label.innerHTML = "Howdy " + data.name;
+		label.innerHTML = isundefined ? "" : "Howdy " + data.name;
 	}).catch(function (err) {
 		console.warn('Something went wrong.', err);
 	});

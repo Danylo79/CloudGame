@@ -46,12 +46,18 @@ app.get('/', function (req, res) {
 app.get('/nav', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/nav.html'));
 });
+app.get('/account', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/account.html'));
+});
+app.get('/play', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/game/play.html'));
+});
 
 app.get('/login/result', function (req, res) {
     console.log("user:", req.session.user);
     res.setHeader('Content-Type', 'application/json');
     const user = req.session.user;
-    const payload = { id: user.id, name: user.name, email: user.email };
+    const payload = typeof(user) == "undefined" || user == null ? {} : { id: user.id, name: user.name, email: user.email };
     res.end(JSON.stringify(payload, null, 3));
 });
 
