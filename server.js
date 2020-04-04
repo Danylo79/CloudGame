@@ -91,7 +91,7 @@ app.get('/api/items', function (req, res) {
     });
 });
 app.get('/api/items/:id', function (req, res) {
-    console.log("Id:", req.params.id);
+    //console.log("Id:", req.params.id);
     res.setHeader('Content-Type', 'application/json');
     fs.readFile(path.join(__dirname + '/data/items/items.json'), (err, data) => {
         if (err) throw err;

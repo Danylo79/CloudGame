@@ -33,6 +33,21 @@ fetch('/nav').then(function (response) {
 var itemcards = document.querySelectorAll(".item");
 for (var i = 0; i < itemcards.length; i++) {
 	var card = itemcards[i];
-	console.log(card.getAttribute("data-item-id"));
-	
+	var itemid = card.getAttribute("data-item-id");
+	fetch('/api/items/' + itemid).then(function (response) {
+		return response.json();
+	}).then(function (data) {
+		var title = card.querySelector(".card-title");
+		title.innerHTML = data.item + " Bonus's";
+		var text = card.querySelector(".card-text");
+		text.innerHTML =
+			"<li>Item Id: " + data.itemid + "</li>" +
+			"<li>Rarity: " + data.itemrarity + "</li>" +
+			"<li>Mana Bonus: " + data.mana.modifier + data.mana.amount + "</li>" +
+			"<li>Strength Bonus: " + data.strength.modifier + data.strength.amount + "</li>" +
+			"<li>Crit Chance Bonus: " + data.critchance.modifier + data.critchance.amount + "%</li>" +
+			"<li>Crit Damage Bonus: " + data.critdamage.modifier + data.critdamage.amount + "%</li>" +
+			"<li>Health Bonus: " + data.health.modifier + data.health.amount + "</li>" +
+			"<li>Defence Bonus: " + data.defence.modifier + data.defence.amount + "</li>";
+	})
 }
