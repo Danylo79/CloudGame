@@ -1,0 +1,11 @@
+{
+    "Zombie": [
+        {
+        "Enemy": "Zombie",
+        "EnemyId": 25173,
+        "Damage": 4.5,
+        "CritChance": 5,
+        "CritMultiplyer": 3
+        }
+    ]
+}
