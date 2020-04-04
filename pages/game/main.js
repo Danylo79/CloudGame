@@ -16,7 +16,7 @@ fetch('/nav').then(function (response) {
 	fetch('/login/result').then(function (response) {
 		return response.json();
 	}).then(function (data) {
-		console.log(data);
+		//console.log(data);
 		var btn = document.getElementById("loginbtn");
 		var isundefined = typeof (data.id) == "undefined" || data.id == null;
 		btn.innerHTML = isundefined ? "Login" : "Logout";
@@ -30,3 +30,9 @@ fetch('/nav').then(function (response) {
 		console.warn('Something went wrong.', err);
 	});
 });
+var itemcards = document.querySelectorAll(".item");
+for (var i = 0; i < itemcards.length; i++) {
+	var card = itemcards[i];
+	console.log(card.getAttribute("data-item-id"));
+	
+}

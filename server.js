@@ -75,11 +75,30 @@ app.get('/play', function (req, res) {
 });
 
 app.get('/login/result', function (req, res) {
-    console.log("user:", req.session.user);
+    //console.log("user:", req.session.user);
     res.setHeader('Content-Type', 'application/json');
     const user = req.session.user;
-    const payload = typeof(user) == "undefined" || user == null ? {} : { id: user.id, name: user.name, email: user.email };
+    const payload = typeof (user) == "undefined" || user == null ? {} : { id: user.id, name: user.name, email: user.email };
     res.end(JSON.stringify(payload, null, 3));
+});
+app.get('/api/items', function (req, res) {
+    //console.log("user:", req.session.user);
+    res.setHeader('Content-Type', 'application/json');
+    fs.readFile(path.join(__dirname + '/data/items/items.json'), (err, data) => {
+        if (err) throw err;
+        const items = JSON.parse(data).items;
+        res.end(JSON.stringify(items, null, 3));
+    });
+});
+app.get('/api/items/:id', function (req, res) {
+    console.log("Id:", req.params.id);
+    res.setHeader('Content-Type', 'application/json');
+    fs.readFile(path.join(__dirname + '/data/items/items.json'), (err, data) => {
+        if (err) throw err;
+        const items = JSON.parse(data).items;
+        const result = items.filter(item => item.itemid == req.params.id);
+        res.end(JSON.stringify(result[0], null, 3));
+    });
 });
 
 app.get('/logout', function (req, res) {
@@ -115,5 +134,6 @@ app.post('/login', function (req, res) {
 
     });
 });
+
 
 app.listen(port, () => console.log(`Example app listening`))
