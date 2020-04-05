@@ -18,38 +18,23 @@
     <div id="nav"></div>
 
     <div class="overflow-auto mt-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-4 mt-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Talismans</h5>
-                            <p class="card-text"></p>
-                            <a href="/wiki/items/talismans" class="btn btn-primary">Browse</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 mt-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Weapons</h5>
-                            <p class="card-text"></p>
-                            <a href="/wiki/items/weapons" class="btn btn-primary">Browse</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 mt-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Armors</h5>
-                            <p class="card-text"></p>
-                            <a href="/wiki/items/armors" class="btn btn-primary">Browse</a>
-                        </div>
-                    </div>
+        <div class="d-flex flex-wrap wikicard">
+
+        </div>
+    </div>
+
+    <script id="card-template" type="text/template">
+        <div class="col mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{item}}</h5>
+                    <img src="{{itemimage}}"/>
+                    <p class="card-text"></p>
+                    <a href="/wiki/items/talismans" class="btn btn-primary">Browse</a>
                 </div>
             </div>
         </div>
-    </div>
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

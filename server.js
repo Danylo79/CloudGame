@@ -29,7 +29,7 @@ app.get('/forum', function (req, res) {
 app.get('/wiki', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/extras/mainwiki.html'));
 });
-app.get('/wiki/items', function (req, res) {
+app.get('/wiki/browse', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/extras/wikiitems.html'));
 });
 app.get('/wiki/gamemechanics', function (req, res) {
@@ -39,7 +39,7 @@ app.get('/wiki/authors', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/extras/wikiauthors.html'));
 });
 app.get('/wiki/browse/items', function (req, res) {
-    res.sendFile(path.join(__dirname + '/pages/extras/browseitems.html'));
+    res.sendFile(path.join(__dirname + '/pages/extras/items.html'));
 });
 app.get('/wiki/browse/skills', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/extras/browseskills.html'));
@@ -90,6 +90,15 @@ app.get('/api/items', function (req, res) {
         res.end(JSON.stringify(items, null, 3));
     });
 });
+app.get('/api/enemys', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    fs.readFile(path.join(__dirname + '/data/enemys/enemys.json'), (err, data) => {
+        if (err) throw err;
+        const enemys = JSON.parse(data).enemys;
+        res.end(JSON.stringify(enemys, null, 3));
+        //console.log("Enemys:", enemys);
+    });
+});
 app.get('/api/items/:id', function (req, res) {
     //console.log("Id:", req.params.id);
     res.setHeader('Content-Type', 'application/json');
@@ -98,6 +107,16 @@ app.get('/api/items/:id', function (req, res) {
         const items = JSON.parse(data).items;
         const result = items.filter(item => item.itemid == req.params.id);
         res.end(JSON.stringify(result[0], null, 3));
+    });
+});
+app.get('/api/enemys/:id', function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    fs.readFile(path.join(__dirname + '/data/enemys/enemys.json'), (err, data) => {
+        if (err) throw err;
+        const enemys = JSON.parse(data).enemys;
+        const result = enemys.filter(enemy => enemy.enemyid == req.params.id);
+        res.end(JSON.stringify(result[0], null, 3));
+        console.log(result);
     });
 });
 

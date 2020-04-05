@@ -30,6 +30,7 @@ fetch('/nav').then(function (response) {
 		console.warn('Something went wrong.', err);
 	});
 });
+
 var itemcards = document.querySelectorAll(".item");
 for (var i = 0; i < itemcards.length; i++) {
 	var card = itemcards[i];
@@ -51,3 +52,19 @@ for (var i = 0; i < itemcards.length; i++) {
 			"<li>Defence Bonus: " + data.defence.modifier + data.defence.amount + "</li>";
 	})
 }
+
+var wikicard = document.querySelector(".wikicard");
+var cardtemplate = document.querySelector("#card-template").firstChild;
+fetch('/api/items').then(function (response) {
+	return response.json();
+}).then(function (data) {
+	for (var i = 0; i < data.length; i++) {
+		var item = data[i];
+		if (item.renderonwiki == true) {
+			var cln = cardtemplate.cloneNode(true);
+			wikicard.innerHTML += cln.textContent
+				.replace("{{item}}", item.item)
+				.replace("{{itemimage}}", item.itemimage);
+		}
+	}
+});

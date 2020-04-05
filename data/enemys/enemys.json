@@ -1,11 +1,11 @@
 {
-    "Zombie": [
+    "enemys": [
         {
-        "Enemy": "Zombie",
-        "EnemyId": 25173,
-        "Damage": 4.5,
-        "CritChance": 5,
-        "CritMultiplyer": 3
+            "enemy": "Zombie",
+            "enemyid": 25173,
+            "damage": 4.5,
+            "dritChance": 5,
+            "dritMultiplyer": 3
         }
     ]
 }
