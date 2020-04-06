@@ -34,12 +34,13 @@ fetch('/nav').then(function (response) {
 var itemcards = document.querySelectorAll(".item");
 for (var i = 0; i < itemcards.length; i++) {
 	var card = itemcards[i];
-	var itemid = card.getAttribute("data-item-id");
+	var tokens = window.location.href.split("/");
+	var itemid = tokens[tokens.length - 1];
 	fetch('/api/items/' + itemid).then(function (response) {
 		return response.json();
 	}).then(function (data) {
 		var title = card.querySelector(".card-title");
-		title.innerHTML = data.item + " Bonus's";
+		document.title = title.innerHTML = data.item;
 		var text = card.querySelector(".card-text");
 		text.innerHTML =
 			"<li>Item Id: " + data.itemid + "</li>" +
@@ -64,7 +65,9 @@ fetch('/api/items').then(function (response) {
 			var cln = cardtemplate.cloneNode(true);
 			wikicard.innerHTML += cln.textContent
 				.replace("{{item}}", item.item)
-				.replace("{{itemimage}}", item.itemimage);
+				.replace("{{itemimage}}", item.itemimage)
+				.replace("{{desc}}", item.itemtype)
+				.replace("{{link}}", "/wiki/items/" + item.itemid);
 		}
 	}
 });

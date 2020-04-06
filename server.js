@@ -47,17 +47,11 @@ app.get('/wiki/browse/skills', function (req, res) {
 app.get('/wiki/browse/enemys', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/extras/browseenemys.html'));
 });
-app.get('/wiki/items/talismans', function (req, res) {
-    res.sendFile(path.join(__dirname + '/pages/extras/talismans.html'));
-});
-app.get('/wiki/items/armors', function (req, res) {
-    res.sendFile(path.join(__dirname + '/pages/extras/armors.html'));
-});
-app.get('/wiki/items/weapons', function (req, res) {
-    res.sendFile(path.join(__dirname + '/pages/extras/weapons.html'));
-});
 app.get('/wiki/items/talismans/bonetalisman', function (req, res) {
     res.sendFile(path.join(__dirname + '/pages/extras/bonetalisman.html'));
+});
+app.get('/wiki/items/:id', function (req, res) {
+    res.sendFile(path.join(__dirname + '/pages/extras/item.html'));
 });
 
 app.get('/', function (req, res) {

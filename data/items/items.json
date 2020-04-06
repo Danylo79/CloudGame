@@ -2,7 +2,7 @@
     "items": [
         {
             "item": "Rock",
-            "itemimage": "/game/assets/Item__24.png",
+            "itemimage": "/game/assets/RPGIcons1/Icon_62.png",
             "renderonwiki": true,
             "itemid": 10000,
             "itemtype": "Misc",
@@ -35,7 +35,7 @@
         },
         {
             "item": "Bone Talisman",
-            "itemimage": "/game/assets/Item__19.png",
+            "itemimage": "/game/assets/RPGIcons1/Icon_19.png",
             "renderonwiki": true,
             "itemid": 1791,
             "itemtype": "Talisman",
@@ -68,7 +68,7 @@
         },
         {
             "item": "Strength Talisman",
-            "itemimage": "/game/assets/Item__13.png",
+            "itemimage": "/game/assets/RPGIcons1/Icon_18.png",
             "renderonwiki": true,
             "itemid": 1851,
             "itemtype": "Talisman",
@@ -105,7 +105,7 @@
         },
         {
             "item": "Mana Talisman",
-            "itemimage": "/game/assets/Item__22.png",
+            "itemimage": "/game/assets/RPGIcons1/Icon_22.png",
             "renderonwiki": true,
             "itemid": 1628,
             "itemtype": "Talisman",
